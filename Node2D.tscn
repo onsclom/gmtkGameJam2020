@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://GameHolder.gd" type="Script" id=2]
+[ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=3]
+[ext_resource path="res://spaceBG.png" type="Texture" id=4]
+[ext_resource path="res://gmtk-mockplaybg.png" type="Texture" id=5]
+
+[sub_resource type="TileSet" id=1]
+0/name = "icon.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 0.117647, 0.113725, 0.113725, 1 )
+0/region = Rect2( 16, 32, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": null,
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[node name="GameHolder" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 208, 208 )
+texture = ExtResource( 4 )
+
+[node name="RotationNode" type="Node2D" parent="."]
+position = Vector2( 208, 208 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RotationNode"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RotationNode/StaticBody2D"]
+polygon = PoolVector2Array( -80, 16, -64, 16, -64, 64, 64, 64, 64, 80, -16, 80, -16, 96, -32, 96, -32, 80, -96, 80, -96, 64, -80, 64 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="RotationNode/StaticBody2D"]
+polygon = PoolVector2Array( 96, -16, 96, -1.52588e-05, -1.52588e-05, -1.52588e-05, -1.52588e-05, -16, 32, -16, 32, -48, 48, -48, 48, -16 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="RotationNode/StaticBody2D"]
+polygon = PoolVector2Array( -96, -48, -32, -48, -32, -32, -96, -32 )
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="RotationNode/StaticBody2D"]
+polygon = PoolVector2Array( -128, -96, 32, -96, 32, -80, -128, -80 )
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="RotationNode/StaticBody2D"]
+polygon = PoolVector2Array( -144, -144, -128, -144, -128, 144, -144, 144 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="RotationNode/StaticBody2D"]
+position = Vector2( 272, 1.06342 )
+polygon = PoolVector2Array( -144, -144, -128, -144, -128, 144, -144, 144 )
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="RotationNode/StaticBody2D"]
+polygon = PoolVector2Array( 144, 128, -144, 128, -144, 144, 144, 144 )
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="RotationNode/StaticBody2D"]
+position = Vector2( -1.52588e-05, -272 )
+polygon = PoolVector2Array( 144, 128, -144, 128, -144, 144, 144, 144 )
+
+[node name="window texture thing" type="Sprite" parent="RotationNode"]
+position = Vector2( -1.52588e-05, -1.52588e-05 )
+texture = ExtResource( 5 )
+
+[node name="TileMap" type="TileMap" parent="RotationNode"]
+position = Vector2( -208, -208 )
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 0, 0, 262165, 0, 0, 327684, 0, 0, 327701, 0, 0, 393220, 0, 0, 393237, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458773, 0, 0, 524292, 0, 0, 524309, 0, 0, 589828, 0, 0, 589845, 0, 0, 655364, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655375, 0, 0, 655381, 0, 0, 720900, 0, 0, 720911, 0, 0, 720917, 0, 0, 786436, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786453, 0, 0, 851972, 0, 0, 851989, 0, 0, 917508, 0, 0, 917512, 0, 0, 917525, 0, 0, 983044, 0, 0, 983048, 0, 0, 983061, 0, 0, 1048580, 0, 0, 1048584, 0, 0, 1048597, 0, 0, 1114116, 0, 0, 1114119, 0, 0, 1114120, 0, 0, 1114121, 0, 0, 1114122, 0, 0, 1114123, 0, 0, 1114124, 0, 0, 1114125, 0, 0, 1114126, 0, 0, 1114127, 0, 0, 1114128, 0, 0, 1114133, 0, 0, 1179652, 0, 0, 1179659, 0, 0, 1179669, 0, 0, 1245188, 0, 0, 1245205, 0, 0, 1310724, 0, 0, 1310741, 0, 0, 1376260, 0, 0, 1376261, 0, 0, 1376262, 0, 0, 1376263, 0, 0, 1376264, 0, 0, 1376265, 0, 0, 1376266, 0, 0, 1376267, 0, 0, 1376268, 0, 0, 1376269, 0, 0, 1376270, 0, 0, 1376271, 0, 0, 1376272, 0, 0, 1376273, 0, 0, 1376274, 0, 0, 1376275, 0, 0, 1376276, 0, 0, 1376277, 0, 0 )
+
+[node name="KinematicBody2D" parent="RotationNode" instance=ExtResource( 3 )]
+position = Vector2( -32.9709, 1.06342 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 47.7445
+margin_top = 18.7213
+margin_right = 238.745
+margin_bottom = 94.7213
+rect_scale = Vector2( 2, 2 )
+text = "ROTATING RIGHT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+playback_speed = 3.0
+playback/speed = 3.0
