@@ -119,7 +119,7 @@ polygon = PoolVector2Array( -128, -16, -80, -16, -80, -128, -128, -128 )
 position = Vector2( 208, 208 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rotations/RotationTrigger"]
-polygon = PoolVector2Array( 48, 64, 128, 32, 128, 128, 48, 128 )
+polygon = PoolVector2Array( 16, 64, 128, 32, 128, 128, 48, 128 )
 
 [node name="Fire" parent="." instance=ExtResource( 2 )]
 position = Vector2( 32, -128 )

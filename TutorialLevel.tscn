@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://MapThings/LevelFinish.tscn" type="PackedScene" id=1]
+[ext_resource path="res://stuffToImplement/gmtk-hatchexit.png" type="Texture" id=2]
 [ext_resource path="res://gmtk-mockplaybg.png" type="Texture" id=4]
 [ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=5]
 [ext_resource path="res://TutorialText.gd" type="Script" id=6]
@@ -147,11 +148,11 @@ __meta__ = {
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Label3/Area2D"]
 polygon = PoolVector2Array( -16, -16, -16, 144, 64, 144, 48, -16 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( -112, 64 )
-
 [node name="Spawn" type="Position2D" parent="."]
 position = Vector2( -112, 64 )
+
+[node name="Sprite" type="Sprite" parent="Spawn"]
+texture = ExtResource( 2 )
 
 [node name="LevelFinish" parent="." instance=ExtResource( 1 )]
 position = Vector2( 64, -96 )
@@ -176,6 +177,9 @@ __meta__ = {
 polygon = PoolVector2Array( -48, -16, -48, 48, 128, 48, 128, -16 )
 
 [node name="Rotations" type="Node2D" parent="."]
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( -112, 64 )
 [connection signal="body_entered" from="first/Area2D" to="first" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="first/Area2D" to="first" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Label2/Area2D" to="Label2" method="_on_Area2D_body_entered"]

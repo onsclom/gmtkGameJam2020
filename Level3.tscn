@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://MapThings/Fire.tscn" type="PackedScene" id=1]
 [ext_resource path="res://MapThings/RotationTrigger.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://gmtk-mockplaybg.png" type="Texture" id=4]
 [ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=5]
 [ext_resource path="res://MapThings/LevelFinish.tscn" type="PackedScene" id=6]
+[ext_resource path="res://stuffToImplement/gmtk-hatchexit.png" type="Texture" id=7]
 [ext_resource path="res://icon.png" type="Texture" id=8]
 [ext_resource path="res://gmtk-tileset2.png" type="Texture" id=10]
 
@@ -84,6 +85,12 @@ polygon = PoolVector2Array( -32, 80, -16, 80, -16, 128, -32, 128 )
 position = Vector2( 96, 0 )
 polygon = PoolVector2Array( -32, 80, -16, 80, -16, 128, -32, 128 )
 
+[node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -112, -48, -80, -48, -80, -32, -112, -32 )
+
+[node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -128, 32, -96, 32, -96, 48, -128, 48, -128, 32 )
+
 [node name="window texture thing" type="Sprite" parent="."]
 position = Vector2( -1.52588e-05, -1.52588e-05 )
 texture = ExtResource( 4 )
@@ -99,9 +106,10 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 262148, 1, 0, 262149, 1, 2, 262150, 1, 2, 262151, 1, 2, 262152, 1, 2, 262153, 1, 2, 262154, 1, 2, 262155, 1, 2, 262156, 1, 2, 262157, 1, 2, 262158, 1, 2, 262159, 1, 2, 262160, 1, 2, 262161, 1, 2, 262162, 1, 2, 262163, 1, 2, 262164, 1, 2, 262165, 1, 1, 327684, 1, 65538, 327701, 1, 65538, 393220, 1, 65538, 393237, 1, 65538, 458756, 1, 65538, 458773, 1, 65538, 524292, 1, 65538, 524296, 1, 0, 524297, 1, 2, 524298, 1, 2, 524299, 1, 2, 524300, 1, 2, 524301, 1, 2, 524302, 1, 2, 524303, 1, 2, 524304, 1, 2, 524305, 1, 1, 524309, 1, 65538, 589828, 1, 65538, 589832, 1, 65538, 589841, 1, 65538, 589845, 1, 65538, 655364, 1, 65538, 655366, 1, 65542, 655367, 1, 2, 655368, 1, 65540, 655377, 1, 65538, 655381, 1, 65538, 720900, 1, 65538, 720904, 1, 65538, 720907, 1, 0, 720908, 1, 2, 720909, 1, 2, 720910, 1, 5, 720913, 1, 65538, 720917, 1, 65538, 786436, 1, 65538, 786440, 1, 65538, 786443, 1, 65538, 786449, 1, 65538, 786453, 1, 65538, 851972, 1, 65538, 851976, 1, 65538, 851979, 1, 65538, 851985, 1, 65538, 851989, 1, 65538, 917508, 1, 65538, 917512, 1, 65538, 917515, 1, 65536, 917516, 1, 2, 917517, 1, 2, 917518, 1, 2, 917519, 1, 2, 917520, 1, 2, 917521, 1, 65537, 917525, 1, 65538, 983044, 1, 65539, 983045, 1, 2, 983046, 1, 5, 983048, 1, 65538, 983061, 1, 65538, 1048580, 1, 65538, 1048584, 1, 65538, 1048597, 1, 65538, 1114116, 1, 65538, 1114120, 1, 65538, 1114133, 1, 65538, 1179652, 1, 65538, 1179656, 1, 65538, 1179659, 1, 65541, 1179662, 1, 65541, 1179665, 1, 65541, 1179669, 1, 65538, 1245188, 1, 65538, 1245192, 1, 65538, 1245195, 1, 65538, 1245198, 1, 65538, 1245201, 1, 65538, 1245205, 1, 65538, 1310724, 1, 65538, 1310728, 1, 65538, 1310731, 1, 65538, 1310734, 1, 65538, 1310737, 1, 65538, 1310741, 1, 65538, 1376260, 1, 65536, 1376261, 1, 2, 1376262, 1, 2, 1376263, 1, 2, 1376264, 1, 4, 1376265, 1, 2, 1376266, 1, 2, 1376267, 1, 4, 1376268, 1, 2, 1376269, 1, 2, 1376270, 1, 4, 1376271, 1, 2, 1376272, 1, 2, 1376273, 1, 4, 1376274, 1, 2, 1376275, 1, 2, 1376276, 1, 2, 1376277, 1, 65537 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
-
 [node name="Spawn" type="Position2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Spawn"]
+texture = ExtResource( 7 )
 
 [node name="Rotations" type="Node2D" parent="."]
 
@@ -258,6 +266,8 @@ position = Vector2( 0, 40 )
 [node name="LevelFinish" parent="." instance=ExtResource( 6 )]
 position = Vector2( -104, 104 )
 nextLevelNum = 4
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
 
 [editable path="movingSpike"]
 
