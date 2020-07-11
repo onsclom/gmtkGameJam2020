@@ -100,14 +100,6 @@ tile_data = PoolIntArray( 262148, 1, 0, 262149, 1, 2, 262150, 1, 2, 262151, 1, 2
 position = Vector2( 304, 144 )
 nextLevelNum = 2
 
-[node name="Fire" parent="TileMap/LevelFinish" instance=ExtResource( 2 )]
-position = Vector2( -64, -64 )
-rotation = 3.14159
-
-[node name="Fire2" parent="TileMap/LevelFinish" instance=ExtResource( 2 )]
-position = Vector2( -48, -64 )
-rotation = 3.14159
-
 [node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( -112, 112 )
 
@@ -128,3 +120,11 @@ position = Vector2( 208, 208 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rotations/RotationTrigger"]
 polygon = PoolVector2Array( 48, 64, 128, 32, 128, 128, 48, 128 )
+
+[node name="Fire" parent="." instance=ExtResource( 2 )]
+position = Vector2( 32, -128 )
+rotation = 3.14159
+
+[node name="Fire2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 48, -128 )
+rotation = 3.14159
