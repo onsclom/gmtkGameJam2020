@@ -11,6 +11,7 @@ var curRotationAmount = 0
 var targetRotationAmount = 0
 var timeToRotate = 1.5
 var t = 0
+var rotationResetCount = 0
 
 onready var player = $RotationNode/KinematicBody2D
 var playerTscn = preload("res://KinematicBody2D.tscn")
@@ -72,6 +73,8 @@ func changeMap(mapNum):
 	resetRotations()
 	
 func resetRotations():
+	$CanvasLayer/Label.visible = false
+	rotationResetCount += 1
 	for child in $RotationNode/Rotations.get_children():
 		child.triggered = false
 	targetRotationAmount = 0
@@ -83,12 +86,15 @@ func rotate(dir):
 	elif dir == -1:
 		$CanvasLayer/Label.text = "Left Rotate!"
 		
+	var oldResetcount = rotationResetCount
+		
 	$CanvasLayer/Label.visible = true
 	
 	yield(get_tree().create_timer(2), "timeout")
 	
 	$CanvasLayer/Label.visible = false
 	
-	targetRotationAmount += dir*90
-	t = 0
+	if oldResetcount == rotationResetCount:
+		targetRotationAmount += dir*90
+		t = 0
 		
