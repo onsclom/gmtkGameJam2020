@@ -18,6 +18,12 @@ onready var sprite = $Sprite
  
 var y_velo = 0
 var facing_right = false
+var last_y_velo = 0
+
+func _ready():
+	#this allows for playtesting levels not in gameholder
+	if GameManager.gameHolder != null: 
+		GameManager.gameHolder.player = self
  
 func _physics_process(delta):
 	
@@ -35,10 +41,12 @@ func _physics_process(delta):
 	var grounded = is_on_floor()
 	y_velo += GRAVITY
 	
+	if (grounded and last_y_velo > 50):
+		$AnimatedSprite.play("landing")
+	
 	if grounded and Input.is_action_just_pressed("jump"):
 		y_velo = -JUMP_FORCE
 	elif Input.is_action_just_pressed("jump"):
-		print("POSSIBLE SECOND")
 		possiblyWallJump(move_dir)
 	elif grounded:
 		#if grounded and not jumping, then restore double jump!
@@ -59,26 +67,30 @@ func _physics_process(delta):
 	
 	if !grounded and ! (($right.is_colliding() and move_dir == 1) or ($left.is_colliding() and move_dir == -1)):
 		if y_velo > 25:
-			$AnimatedSprite.play("upward_vel")
+			$AnimatedSprite.play("downward_vel")
 		elif abs(y_velo) < 25:
 			$AnimatedSprite.play("0_vel")
-			print("YAY2")
 		else:
-			$AnimatedSprite.play("downward_vel")
+			$AnimatedSprite.play("upward_vel")
 		
 
 		
 	if Input.is_action_just_released("jump") and y_velo < 0:
 		y_velo = y_velo/2
 		
-	y_velo = move_and_slide(Vector2(move_dir * MOVE_SPEED, y_velo), Vector2(0, -1)).y
+	last_y_velo = y_velo
+		
+	var possibleY = move_and_slide(Vector2(move_dir * MOVE_SPEED, y_velo), Vector2(0, -1)).y
+	if possibleY >= 0:
+		y_velo = possibleY
 		
 	rotation = -get_parent().rotation
 	
-	if grounded and move_dir==0:
-		$AnimatedSprite.play("default")
-	elif grounded and move_dir != 0:
-		$AnimatedSprite.play("walk_run")
+	if ($AnimatedSprite.animation != "landing"):
+		if grounded and move_dir==0:
+			$AnimatedSprite.play("default")
+		elif grounded and move_dir != 0:
+			$AnimatedSprite.play("walk_run")
 		
 		
 	if move_dir != 0:
@@ -93,9 +105,7 @@ func _physics_process(delta):
 
 #if holding direction of ray cast, then jump
 func possiblyWallJump(move_dir):
-	print("possible?")
 	if $left.is_colliding():
-		print("left wall jump")
 		y_velo = -JUMP_FORCE
 		walljump_dir = 1
 		last_walljump = 0
@@ -106,7 +116,6 @@ func possiblyWallJump(move_dir):
 		last_walljump = 0
 		secondJump = true
 	else:
-		print("second jump case")
 		#DOUBLE JUMP
 		if secondJump == true:
 			y_velo = -JUMP_FORCE
@@ -116,4 +125,6 @@ func possiblyWallJump(move_dir):
 
 
 func _on_AnimatedSprite_animation_finished():
+	if $AnimatedSprite.animation == "landing":
+		$AnimatedSprite.play("default")
 	pass # Replace with function body.

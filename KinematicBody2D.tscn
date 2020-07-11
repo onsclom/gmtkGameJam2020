@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://astroFrames/gmtk-astroman13.png" type="Texture" id=2]
@@ -31,9 +31,12 @@
 [ext_resource path="res://astroFrames/gmtk-astroman24.png" type="Texture" id=29]
 [ext_resource path="res://astroFrames/gmtk-astroman22.png" type="Texture" id=30]
 [ext_resource path="res://astroFrames/gmtk-astroman31.png" type="Texture" id=31]
+[ext_resource path="res://astroFrames/gmtk-astroman21.png" type="Texture" id=32]
+[ext_resource path="res://astroFrames/gmtk-astroman20.png" type="Texture" id=33]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7, 8 )
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 5.41172
+height = 5.25
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -66,13 +69,18 @@ animations = [ {
 "loop": true,
 "name": "upward_vel",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 33 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "landing",
+"speed": 14.0
 } ]
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 1.003 )
+position = Vector2( 0, 1 )
 shape = SubResource( 1 )
 
 [node name="left" type="RayCast2D" parent="."]
@@ -85,6 +93,7 @@ cast_to = Vector2( 10, 0 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-frame = 7
+animation = "landing"
+frame = 1
 playing = true
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
