@@ -10,7 +10,7 @@ onready var labelNode = $Label
 # Called when the node enters the scene tree for the first time.
 var curRotationAmount = 0
 var targetRotationAmount = 0
-var timeToRotate = 2
+var timeToRotate = 1.5
 var t = 0
 
 func _ready():

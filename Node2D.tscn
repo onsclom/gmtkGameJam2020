@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://GameHolder.gd" type="Script" id=2]
 [ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=3]
 [ext_resource path="res://spaceBG.png" type="Texture" id=4]
 [ext_resource path="res://gmtk-mockplaybg.png" type="Texture" id=5]
+[ext_resource path="res://gmtk-tileset2.png" type="Texture" id=6]
+[ext_resource path="res://m6x11.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://TutorialText.gd" type="Script" id=8]
 
 [sub_resource type="TileSet" id=1]
 0/name = "icon.png 0"
@@ -27,6 +30,32 @@
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
+1/name = "gmtk-tileset2.png 1"
+1/texture = ExtResource( 6 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 144, 96 )
+1/tile_mode = 1
+1/autotile/bitmask_mode = 1
+1/autotile/bitmask_flags = [ Vector2( 0, 0 ), 176, Vector2( 0, 1 ), 50, Vector2( 0, 2 ), 255, Vector2( 0, 3 ), 507, Vector2( 0, 4 ), 442, Vector2( 0, 5 ), 190, Vector2( 1, 0 ), 152, Vector2( 1, 1 ), 26, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 510, Vector2( 1, 4 ), 250, Vector2( 1, 5 ), 187, Vector2( 2, 0 ), 56, Vector2( 2, 1 ), 146, Vector2( 2, 2 ), 191, Vector2( 2, 3 ), 251, Vector2( 2, 4 ), 434, Vector2( 2, 5 ), 182, Vector2( 3, 0 ), 184, Vector2( 3, 1 ), 178, Vector2( 3, 2 ), 506, Vector2( 3, 3 ), 446, Vector2( 3, 4 ), 218, Vector2( 3, 5 ), 155, Vector2( 4, 0 ), 58, Vector2( 4, 1 ), 154, Vector2( 4, 2 ), 438, Vector2( 4, 3 ), 504, Vector2( 4, 4 ), 440, Vector2( 4, 5 ), 62, Vector2( 5, 0 ), 24, Vector2( 5, 1 ), 144, Vector2( 5, 2 ), 219, Vector2( 5, 3 ), 63, Vector2( 5, 4 ), 248, Vector2( 5, 5 ), 59, Vector2( 6, 0 ), 18, Vector2( 6, 1 ), 48, Vector2( 6, 2 ), 511, Vector2( 6, 3 ), 16, Vector2( 6, 4 ), 443, Vector2( 6, 5 ), 254, Vector2( 7, 0 ), 432, Vector2( 7, 1 ), 54, Vector2( 7, 2 ), 186, Vector2( 8, 0 ), 216, Vector2( 8, 1 ), 27 ]
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 16, 16 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 7 )
 
 [node name="GameHolder" type="Node2D"]
 script = ExtResource( 2 )
@@ -39,18 +68,6 @@ texture = ExtResource( 4 )
 position = Vector2( 208, 208 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="RotationNode"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RotationNode/StaticBody2D"]
-polygon = PoolVector2Array( -80, 16, -64, 16, -64, 64, 64, 64, 64, 80, -16, 80, -16, 96, -32, 96, -32, 80, -96, 80, -96, 64, -80, 64 )
-
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="RotationNode/StaticBody2D"]
-polygon = PoolVector2Array( 96, -16, 96, -1.52588e-05, -1.52588e-05, -1.52588e-05, -1.52588e-05, -16, 32, -16, 32, -48, 48, -48, 48, -16 )
-
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="RotationNode/StaticBody2D"]
-polygon = PoolVector2Array( -96, -48, -32, -48, -32, -32, -96, -32 )
-
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="RotationNode/StaticBody2D"]
-polygon = PoolVector2Array( -128, -96, 32, -96, 32, -80, -128, -80 )
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="RotationNode/StaticBody2D"]
 polygon = PoolVector2Array( -144, -144, -128, -144, -128, 144, -144, 144 )
@@ -66,6 +83,15 @@ polygon = PoolVector2Array( 144, 128, -144, 128, -144, 144, 144, 144 )
 position = Vector2( -1.52588e-05, -272 )
 polygon = PoolVector2Array( 144, 128, -144, 128, -144, 144, 144, 144 )
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RotationNode/StaticBody2D"]
+polygon = PoolVector2Array( 64, 128, 64, 96, 96, 96, 96, 64, 128, 64, 128, 128 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="RotationNode/StaticBody2D"]
+polygon = PoolVector2Array( -128, 32, -128, 48, 64, 48, 64, 32, -128, 32 )
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="RotationNode/StaticBody2D"]
+polygon = PoolVector2Array( -80, -48, -80, -16, -64, -16, -64, -32, -32, -32, -32, -48, 128, -48, 128, -64, -48, -64, -48, -48 )
+
 [node name="window texture thing" type="Sprite" parent="RotationNode"]
 position = Vector2( -1.52588e-05, -1.52588e-05 )
 texture = ExtResource( 5 )
@@ -75,16 +101,90 @@ position = Vector2( -208, -208 )
 tile_set = SubResource( 1 )
 cell_size = Vector2( 16, 16 )
 format = 1
-tile_data = PoolIntArray( 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 262153, 0, 0, 262154, 0, 0, 262155, 0, 0, 262156, 0, 0, 262157, 0, 0, 262158, 0, 0, 262159, 0, 0, 262160, 0, 0, 262161, 0, 0, 262162, 0, 0, 262163, 0, 0, 262164, 0, 0, 262165, 0, 0, 327684, 0, 0, 327701, 0, 0, 393220, 0, 0, 393237, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458773, 0, 0, 524292, 0, 0, 524309, 0, 0, 589828, 0, 0, 589845, 0, 0, 655364, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655375, 0, 0, 655381, 0, 0, 720900, 0, 0, 720911, 0, 0, 720917, 0, 0, 786436, 0, 0, 786445, 0, 0, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786453, 0, 0, 851972, 0, 0, 851989, 0, 0, 917508, 0, 0, 917512, 0, 0, 917525, 0, 0, 983044, 0, 0, 983048, 0, 0, 983061, 0, 0, 1048580, 0, 0, 1048584, 0, 0, 1048597, 0, 0, 1114116, 0, 0, 1114119, 0, 0, 1114120, 0, 0, 1114121, 0, 0, 1114122, 0, 0, 1114123, 0, 0, 1114124, 0, 0, 1114125, 0, 0, 1114126, 0, 0, 1114127, 0, 0, 1114128, 0, 0, 1114133, 0, 0, 1179652, 0, 0, 1179659, 0, 0, 1179669, 0, 0, 1245188, 0, 0, 1245205, 0, 0, 1310724, 0, 0, 1310741, 0, 0, 1376260, 0, 0, 1376261, 0, 0, 1376262, 0, 0, 1376263, 0, 0, 1376264, 0, 0, 1376265, 0, 0, 1376266, 0, 0, 1376267, 0, 0, 1376268, 0, 0, 1376269, 0, 0, 1376270, 0, 0, 1376271, 0, 0, 1376272, 0, 0, 1376273, 0, 0, 1376274, 0, 0, 1376275, 0, 0, 1376276, 0, 0, 1376277, 0, 0 )
+tile_data = PoolIntArray( 262148, 1, 0, 262149, 1, 2, 262150, 1, 2, 262151, 1, 2, 262152, 1, 2, 262153, 1, 2, 262154, 1, 2, 262155, 1, 2, 262156, 1, 2, 262157, 1, 2, 262158, 1, 2, 262159, 1, 2, 262160, 1, 2, 262161, 1, 2, 262162, 1, 2, 262163, 1, 2, 262164, 1, 2, 262165, 1, 1, 327684, 1, 65538, 327701, 1, 65538, 393220, 1, 65538, 393237, 1, 65538, 458756, 1, 65538, 458773, 1, 65538, 524292, 1, 65538, 524309, 1, 65538, 589828, 1, 65538, 589834, 1, 0, 589835, 1, 2, 589836, 1, 2, 589837, 1, 2, 589838, 1, 2, 589839, 1, 2, 589840, 1, 2, 589841, 1, 2, 589842, 1, 2, 589843, 1, 2, 589844, 1, 2, 589845, 1, 65540, 655364, 1, 65538, 655368, 1, 0, 655369, 1, 2, 655370, 1, 65537, 655381, 1, 65538, 720900, 1, 65538, 720904, 1, 6, 720917, 1, 65538, 786436, 1, 65538, 786453, 1, 65538, 851972, 1, 65538, 851989, 1, 65538, 917508, 1, 65538, 917525, 1, 65538, 983044, 1, 65539, 983045, 1, 2, 983046, 1, 2, 983047, 1, 2, 983048, 1, 2, 983049, 1, 2, 983050, 1, 2, 983051, 1, 2, 983052, 1, 2, 983053, 1, 2, 983054, 1, 2, 983055, 1, 2, 983056, 1, 5, 983061, 1, 65538, 1048580, 1, 65538, 1048597, 1, 65538, 1114116, 1, 65538, 1114131, 1, 7, 1114132, 1, 196612, 1114133, 1, 262147, 1179652, 1, 65538, 1179667, 1, 131076, 1179668, 1, 131078, 1179669, 1, 131077, 1245188, 1, 65538, 1245201, 1, 7, 1245202, 1, 196612, 1245203, 1, 196609, 1245204, 1, 131078, 1245205, 1, 131077, 1310724, 1, 65538, 1310737, 1, 131076, 1310738, 1, 131078, 1310739, 1, 131078, 1310740, 1, 131078, 1310741, 1, 131077, 1376260, 1, 65536, 1376261, 1, 2, 1376262, 1, 2, 1376263, 1, 2, 1376264, 1, 2, 1376265, 1, 2, 1376266, 1, 2, 1376267, 1, 2, 1376268, 1, 2, 1376269, 1, 2, 1376270, 1, 2, 1376271, 1, 2, 1376272, 1, 2, 1376273, 1, 327684, 1376274, 1, 196613, 1376275, 1, 196613, 1376276, 1, 196613, 1376277, 1, 65544 )
+
+[node name="first" type="Label" parent="RotationNode"]
+margin_left = -96.0
+margin_top = 64.0
+margin_right = 2.99998
+margin_bottom = 95.0
+custom_fonts/font = SubResource( 2 )
+text = "a and d to move
+space to jump"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="RotationNode/first"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RotationNode/first/Area2D"]
+polygon = PoolVector2Array( -32, -16, 224, -16, 224, 64, -32, 64 )
+
+[node name="Label2" type="Label" parent="RotationNode"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -16.0
+margin_top = -32.0
+margin_right = 139.0
+margin_bottom = -1.00002
+custom_fonts/font = SubResource( 2 )
+text = "release jump quickly 
+for a short jump"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="RotationNode/Label2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RotationNode/Label2/Area2D"]
+polygon = PoolVector2Array( -16, -16, -16, 64, 144, 64, 144, -16, -16, -16 )
+
+[node name="Label3" type="Label" parent="RotationNode"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -112.0
+margin_top = -112.0
+margin_right = 43.0
+margin_bottom = -81.0
+custom_fonts/font = SubResource( 2 )
+text = "jump on wall
+to walljump"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="RotationNode/Label3"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RotationNode/Label3/Area2D"]
+polygon = PoolVector2Array( -16, -16, -16, 144, 64, 144, 48, -16 )
+
+[node name="Label4" type="Label" parent="RotationNode"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -1.52588e-05
+margin_top = -112.0
+margin_right = 155.0
+margin_bottom = -81.0
+custom_fonts/font = SubResource( 2 )
+text = "enter to continue"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="RotationNode/Label4"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RotationNode/Label4/Area2D"]
+polygon = PoolVector2Array( -48, -16, -48, 48, 128, 48, 128, -16 )
 
 [node name="KinematicBody2D" parent="RotationNode" instance=ExtResource( 3 )]
-position = Vector2( -32.9709, 1.06342 )
+position = Vector2( -112, 64 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 47.7445
-margin_top = 18.7213
-margin_right = 238.745
-margin_bottom = 94.7213
+margin_left = -400.0
+margin_top = 32.0
+margin_right = -209.0
+margin_bottom = 108.0
 rect_scale = Vector2( 2, 2 )
 text = "ROTATING RIGHT"
 __meta__ = {
@@ -94,3 +194,11 @@ __meta__ = {
 [node name="Tween" type="Tween" parent="."]
 playback_speed = 3.0
 playback/speed = 3.0
+[connection signal="body_entered" from="RotationNode/first/Area2D" to="RotationNode/first" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="RotationNode/first/Area2D" to="RotationNode/first" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="RotationNode/Label2/Area2D" to="RotationNode/Label2" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="RotationNode/Label2/Area2D" to="RotationNode/Label2" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="RotationNode/Label3/Area2D" to="RotationNode/Label3" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="RotationNode/Label3/Area2D" to="RotationNode/Label3" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="RotationNode/Label4/Area2D" to="RotationNode/Label4" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="RotationNode/Label4/Area2D" to="RotationNode/Label4" method="_on_Area2D_body_exited"]
