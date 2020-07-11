@@ -15,6 +15,8 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
+	print("entered!")
 	if body.name == "KinematicBody2D" and triggered == false:
+		print("should rotate!")
 		triggered = true
 		GameManager.gameHolder.rotate(dir)

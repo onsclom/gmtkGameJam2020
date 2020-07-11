@@ -1,15 +1,12 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://LevelFinish.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Fire.tscn" type="PackedScene" id=3]
+[ext_resource path="res://MapThings/LevelFinish.tscn" type="PackedScene" id=1]
 [ext_resource path="res://gmtk-mockplaybg.png" type="Texture" id=4]
 [ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=5]
 [ext_resource path="res://TutorialText.gd" type="Script" id=6]
 [ext_resource path="res://m6x11.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://icon.png" type="Texture" id=8]
 [ext_resource path="res://gmtk-tileset2.png" type="Texture" id=10]
-[ext_resource path="res://RotationTrigger.tscn" type="PackedScene" id=11]
-[ext_resource path="res://movingSpike.tscn" type="PackedScene" id=12]
 
 [sub_resource type="TileSet" id=1]
 0/name = "icon.png 0"
@@ -150,7 +147,17 @@ __meta__ = {
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Label3/Area2D"]
 polygon = PoolVector2Array( -16, -16, -16, 144, 64, 144, 48, -16 )
 
+[node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( -112, 64 )
+
+[node name="Spawn" type="Position2D" parent="."]
+position = Vector2( -112, 64 )
+
+[node name="LevelFinish" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64, -96 )
+
 [node name="Label4" type="Label" parent="."]
+visible = false
 modulate = Color( 1, 1, 1, 0 )
 margin_left = -1.52588e-05
 margin_top = -112.0
@@ -168,44 +175,7 @@ __meta__ = {
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Label4/Area2D"]
 polygon = PoolVector2Array( -48, -16, -48, 48, 128, 48, 128, -16 )
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( -112, 64 )
-
-[node name="Fire" parent="." instance=ExtResource( 3 )]
-position = Vector2( -32, 32 )
-
-[node name="Fire2" parent="." instance=ExtResource( 3 )]
-position = Vector2( -48, 32 )
-
-[node name="Spawn" type="Position2D" parent="."]
-position = Vector2( -112, 64 )
-
-[node name="movingSpike" parent="." instance=ExtResource( 12 )]
-position = Vector2( 128, -1.52588e-05 )
-seconds = 3.0
-
-[node name="movingSpike2" parent="." instance=ExtResource( 12 )]
-position = Vector2( -128, -48 )
-
-[node name="start" parent="movingSpike2" index="0"]
-position = Vector2( 0, -64 )
-
-[node name="end" parent="movingSpike2" index="1"]
-position = Vector2( 0, 64 )
-
-[node name="RotationTrigger" parent="." instance=ExtResource( 11 )]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RotationTrigger"]
-polygon = PoolVector2Array( 32, 48, 64, 96, 128, 96, 128, 48 )
-
-[node name="RotationTrigger2" parent="." instance=ExtResource( 11 )]
-dir = -1
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RotationTrigger2"]
-polygon = PoolVector2Array( -128, 32, -80, 32, -80, -16, -128, -16 )
-
-[node name="LevelFinish" parent="." instance=ExtResource( 1 )]
-position = Vector2( 64, -96 )
+[node name="Rotations" type="Node2D" parent="."]
 [connection signal="body_entered" from="first/Area2D" to="first" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="first/Area2D" to="first" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Label2/Area2D" to="Label2" method="_on_Area2D_body_entered"]
@@ -214,7 +184,3 @@ position = Vector2( 64, -96 )
 [connection signal="body_exited" from="Label3/Area2D" to="Label3" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Label4/Area2D" to="Label4" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Label4/Area2D" to="Label4" method="_on_Area2D_body_exited"]
-
-[editable path="movingSpike2"]
-
-[editable path="RotationTrigger"]

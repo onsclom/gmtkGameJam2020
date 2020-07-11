@@ -1,0 +1,93 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://gmtk-mockplaybg.png" type="Texture" id=4]
+[ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=5]
+[ext_resource path="res://icon.png" type="Texture" id=8]
+[ext_resource path="res://gmtk-tileset2.png" type="Texture" id=10]
+
+[sub_resource type="TileSet" id=1]
+0/name = "icon.png 0"
+0/texture = ExtResource( 8 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 0.117647, 0.113725, 0.113725, 1 )
+0/region = Rect2( 16, 32, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "gmtk-tileset2.png 1"
+1/texture = ExtResource( 10 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 144, 96 )
+1/tile_mode = 1
+1/autotile/bitmask_mode = 1
+1/autotile/bitmask_flags = [ Vector2( 0, 0 ), 176, Vector2( 0, 1 ), 50, Vector2( 0, 2 ), 255, Vector2( 0, 3 ), 507, Vector2( 0, 4 ), 442, Vector2( 0, 5 ), 190, Vector2( 1, 0 ), 152, Vector2( 1, 1 ), 26, Vector2( 1, 2 ), 447, Vector2( 1, 3 ), 510, Vector2( 1, 4 ), 250, Vector2( 1, 5 ), 187, Vector2( 2, 0 ), 56, Vector2( 2, 1 ), 146, Vector2( 2, 2 ), 191, Vector2( 2, 3 ), 251, Vector2( 2, 4 ), 434, Vector2( 2, 5 ), 182, Vector2( 3, 0 ), 184, Vector2( 3, 1 ), 178, Vector2( 3, 2 ), 506, Vector2( 3, 3 ), 446, Vector2( 3, 4 ), 218, Vector2( 3, 5 ), 155, Vector2( 4, 0 ), 58, Vector2( 4, 1 ), 154, Vector2( 4, 2 ), 438, Vector2( 4, 3 ), 504, Vector2( 4, 4 ), 440, Vector2( 4, 5 ), 62, Vector2( 5, 0 ), 24, Vector2( 5, 1 ), 144, Vector2( 5, 2 ), 219, Vector2( 5, 3 ), 63, Vector2( 5, 4 ), 248, Vector2( 5, 5 ), 59, Vector2( 6, 0 ), 18, Vector2( 6, 1 ), 48, Vector2( 6, 2 ), 511, Vector2( 6, 3 ), 16, Vector2( 6, 4 ), 443, Vector2( 6, 5 ), 254, Vector2( 7, 0 ), 432, Vector2( 7, 1 ), 54, Vector2( 7, 2 ), 186, Vector2( 8, 0 ), 216, Vector2( 8, 1 ), 27 ]
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 16, 16 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+
+[node name="RotationNode" type="Node2D"]
+position = Vector2( 208, 208 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( -144, -144, -128, -144, -128, 144, -144, 144 )
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( 272, 1.06342 )
+polygon = PoolVector2Array( -144, -144, -128, -144, -128, 144, -144, 144 )
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 144, 128, -144, 128, -144, 144, 144, 144 )
+
+[node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2( -1.52588e-05, -272 )
+polygon = PoolVector2Array( 144, 128, -144, 128, -144, 144, 144, 144 )
+
+[node name="window texture thing" type="Sprite" parent="."]
+position = Vector2( -1.52588e-05, -1.52588e-05 )
+texture = ExtResource( 4 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( -208, -208 )
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 262148, 1, 0, 262149, 1, 2, 262150, 1, 2, 262151, 1, 2, 262152, 1, 2, 262153, 1, 2, 262154, 1, 2, 262155, 1, 2, 262156, 1, 2, 262157, 1, 2, 262158, 1, 2, 262159, 1, 2, 262160, 1, 2, 262161, 1, 2, 262162, 1, 2, 262163, 1, 2, 262164, 1, 2, 262165, 1, 1, 327684, 1, 65538, 327701, 1, 65538, 393220, 1, 65538, 393237, 1, 65538, 458756, 1, 65538, 458773, 1, 65538, 524292, 1, 65538, 524309, 1, 65538, 589828, 1, 65538, 589845, 1, 65538, 655364, 1, 65538, 655381, 1, 65538, 720900, 1, 65538, 720917, 1, 65538, 786436, 1, 65538, 786453, 1, 65538, 851972, 1, 65538, 851989, 1, 65538, 917508, 1, 65538, 917525, 1, 65538, 983044, 1, 65538, 983061, 1, 65538, 1048580, 1, 65538, 1048597, 1, 65538, 1114116, 1, 65538, 1114133, 1, 65538, 1179652, 1, 65538, 1179669, 1, 65538, 1245188, 1, 65538, 1245205, 1, 65538, 1310724, 1, 65538, 1310741, 1, 65538, 1376260, 1, 65536, 1376261, 1, 2, 1376262, 1, 2, 1376263, 1, 2, 1376264, 1, 2, 1376265, 1, 2, 1376266, 1, 2, 1376267, 1, 2, 1376268, 1, 2, 1376269, 1, 2, 1376270, 1, 2, 1376271, 1, 2, 1376272, 1, 2, 1376273, 1, 2, 1376274, 1, 2, 1376275, 1, 2, 1376276, 1, 2, 1376277, 1, 65537 )
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( -112, 64 )
+
+[node name="Spawn" type="Position2D" parent="."]
+position = Vector2( -112, 64 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -48.0
+margin_right = 66.0
+margin_bottom = 31.0
+text = "NO MORE LEVELS 
+NICE job wow"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rotations" type="Node2D" parent="."]

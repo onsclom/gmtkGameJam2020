@@ -79,3 +79,5 @@ position = Vector2( -112, 64 )
 
 [node name="Spawn" type="Position2D" parent="."]
 position = Vector2( -112, 64 )
+
+[node name="Rotations" type="Node2D" parent="."]

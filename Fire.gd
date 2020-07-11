@@ -19,4 +19,5 @@ func _ready():
 func _on_Area2D_body_entered(body):
 	if body.name == "KinematicBody2D":
 		GameManager.gameHolder.playerDeath()
+		GameManager.gameHolder.resetRotations()
 		

@@ -17,8 +17,7 @@ var playerTscn = preload("res://KinematicBody2D.tscn")
 
 
 var startLevel = 0
-
-var levels = [preload("res://TutorialLevel.tscn"), preload("res://BaseLevel.tscn")]
+var levels = [preload("res://TutorialLevel.tscn"), preload("res://Level1.tscn"), preload("res://FinalLevel.tscn")]
 
 
 func _ready():
@@ -66,6 +65,17 @@ func changeMap(mapNum):
 	var newMap = levels[mapNum].instance()
 	add_child(newMap)
 	newMap.name = "RotationNode"
+	
+	targetRotationAmount = 0
+	curRotationAmount = 0
+	
+	resetRotations()
+	
+func resetRotations():
+	for child in $RotationNode/Rotations.get_children():
+		child.triggered = false
+	targetRotationAmount = 0
+	curRotationAmount = 0
 	
 func rotate(dir):
 	if dir == 1:

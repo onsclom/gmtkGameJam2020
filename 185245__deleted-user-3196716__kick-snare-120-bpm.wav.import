@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/185245__deleted-user-3196716__kick-snare-120-bpm.wav-a13da641419af681cda5e27cb6dd5181.sample"
+
+[deps]
+
+source_file="res://185245__deleted-user-3196716__kick-snare-120-bpm.wav"
+dest_files=[ "res://.import/185245__deleted-user-3196716__kick-snare-120-bpm.wav-a13da641419af681cda5e27cb6dd5181.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
