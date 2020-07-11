@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://MapThings/RotationTrigger.tscn" type="PackedScene" id=1]
 [ext_resource path="res://MapThings/Fire.tscn" type="PackedScene" id=2]
 [ext_resource path="res://MapThings/LevelFinish.tscn" type="PackedScene" id=3]
 [ext_resource path="res://gmtk-mockplaybg.png" type="Texture" id=4]
 [ext_resource path="res://KinematicBody2D.tscn" type="PackedScene" id=5]
+[ext_resource path="res://stuffToImplement/gmtk-hatchexit.png" type="Texture" id=6]
 [ext_resource path="res://icon.png" type="Texture" id=8]
 [ext_resource path="res://gmtk-tileset2.png" type="Texture" id=10]
 
@@ -100,11 +101,11 @@ tile_data = PoolIntArray( 262148, 1, 0, 262149, 1, 2, 262150, 1, 2, 262151, 1, 2
 position = Vector2( 304, 144 )
 nextLevelNum = 2
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( -112, 112 )
-
 [node name="Spawn" type="Position2D" parent="."]
 position = Vector2( -112, 112 )
+
+[node name="Sprite" type="Sprite" parent="Spawn"]
+texture = ExtResource( 6 )
 
 [node name="Rotations" type="Node2D" parent="."]
 position = Vector2( -208, -208 )
@@ -128,3 +129,6 @@ rotation = 3.14159
 [node name="Fire2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 48, -128 )
 rotation = 3.14159
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
+position = Vector2( -112, 112 )
