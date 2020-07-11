@@ -17,7 +17,7 @@ var playerTscn = preload("res://KinematicBody2D.tscn")
 
 
 var startLevel = 0
-var levels = [preload("res://TutorialLevel.tscn"), preload("res://Level1.tscn"), preload("res://FinalLevel.tscn")]
+var levels = [preload("res://TutorialLevel.tscn"), preload("res://Level1.tscn"), preload("res://Level2.tscn"), preload("res://Level3.tscn"), preload("res://FinalLevel.tscn")]
 
 
 func _ready():
@@ -85,7 +85,7 @@ func rotate(dir):
 		
 	$CanvasLayer/Label.visible = true
 	
-	yield(get_tree().create_timer(3), "timeout")
+	yield(get_tree().create_timer(2), "timeout")
 	
 	$CanvasLayer/Label.visible = false
 	

@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://GameHolder.gd" type="Script" id=1]
 [ext_resource path="res://spaceBG.png" type="Texture" id=2]
-[ext_resource path="res://185245__deleted-user-3196716__kick-snare-120-bpm.wav" type="AudioStream" id=3]
 
 [node name="GameHolder" type="Node2D"]
 script = ExtResource( 1 )
@@ -24,7 +23,3 @@ text = "ROTATING LEFT"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
-autoplay = true

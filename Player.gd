@@ -105,12 +105,12 @@ func _physics_process(delta):
 
 #if holding direction of ray cast, then jump
 func possiblyWallJump(move_dir):
-	if $left.is_colliding():
+	if $left.is_colliding() and move_dir == -1:
 		y_velo = -JUMP_FORCE
 		walljump_dir = 1
 		last_walljump = 0
 		secondJump = true
-	elif $right.is_colliding():
+	elif $right.is_colliding() and move_dir == 1:
 		y_velo = -JUMP_FORCE
 		walljump_dir = -1
 		last_walljump = 0
