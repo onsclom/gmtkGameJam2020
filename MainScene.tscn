@@ -1,9 +1,52 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://GameHolder.gd" type="Script" id=1]
 [ext_resource path="res://spaceBG.png" type="Texture" id=2]
 [ext_resource path="res://stuffToImplement/gmtk-rotate.png" type="Texture" id=3]
 [ext_resource path="res://stuffToImplement/gmtk-timerui.png" type="Texture" id=4]
+[ext_resource path="res://stuffToImplement/gmtk-clockwise.png" type="Texture" id=5]
+[ext_resource path="res://stuffToImplement/gmtk-anticlockwise.png" type="Texture" id=6]
+[ext_resource path="res://m6x11.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 31, 38 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 6 )
+region = Rect2( 31, 0, 31, 38 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 6 )
+region = Rect2( 62, 0, 31, 38 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 31, 38 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 5 )
+region = Rect2( 31, 0, 31, 38 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 5 )
+region = Rect2( 62, 0, 31, 38 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "left",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "right",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 7 )
 
 [node name="GameHolder" type="Node2D"]
 script = ExtResource( 1 )
@@ -40,6 +83,25 @@ __meta__ = {
 margin_right = 144.0
 margin_bottom = 96.0
 texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer"]
+position = Vector2( 396, 40 )
+frames = SubResource( 7 )
+animation = "right"
+frame = 2
+playing = true
+
+[node name="time" type="Label" parent="CanvasLayer"]
+margin_left = 10.0
+margin_top = 32.0
+margin_right = 42.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 8 )
+text = "0"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }

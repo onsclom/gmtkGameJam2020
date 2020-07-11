@@ -13,6 +13,9 @@ var timeToRotate = 1.5
 var t = 0
 var rotationResetCount = 0
 
+var time = 0
+var started = false
+
 onready var player = $RotationNode/KinematicBody2D
 var playerTscn = preload("res://KinematicBody2D.tscn")
 
@@ -27,10 +30,16 @@ func _ready():
 	pass # Replace with function body.
 
 func _process(delta):
+	
+	#debug stuff
 	if Input.is_action_just_pressed("right_rotate"):
 		rotate(1)
 	if Input.is_action_just_pressed("left_rotate"):
 		rotate(-1)
+		
+	if started: 
+		time -= delta
+	$CanvasLayer/time.text = str(ceil(time))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -70,10 +79,15 @@ func changeMap(mapNum):
 	targetRotationAmount = 0
 	curRotationAmount = 0
 	
+	if mapNum == 1:
+		#then its level 1! start the timer!
+		started = true
+		time = 300
+	
 	resetRotations()
 	
 func resetRotations():
-	$CanvasLayer/Label.visible = false
+	$CanvasLayer/AnimatedSprite.visible = false
 	rotationResetCount += 1
 	for child in $RotationNode/Rotations.get_children():
 		child.triggered = false
@@ -82,17 +96,17 @@ func resetRotations():
 	
 func rotate(dir):
 	if dir == 1:
-		$CanvasLayer/Label.text = "Right Rotate!"
+		$CanvasLayer/AnimatedSprite.play("right")
 	elif dir == -1:
-		$CanvasLayer/Label.text = "Left Rotate!"
+		$CanvasLayer/AnimatedSprite.play("left")
 		
 	var oldResetcount = rotationResetCount
 		
-	$CanvasLayer/Label.visible = true
+	$CanvasLayer/AnimatedSprite.visible = true
 	
 	yield(get_tree().create_timer(2), "timeout")
 	
-	$CanvasLayer/Label.visible = false
+	$CanvasLayer/AnimatedSprite.visible = false
 	
 	if oldResetcount == rotationResetCount:
 		targetRotationAmount += dir*90
