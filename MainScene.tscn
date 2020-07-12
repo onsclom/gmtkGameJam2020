@@ -136,7 +136,7 @@ __meta__ = {
 position = Vector2( 396, 40 )
 frames = SubResource( 7 )
 animation = "right"
-frame = 1
+frame = 2
 playing = true
 
 [node name="time" type="Label" parent="CanvasLayer"]
@@ -202,7 +202,7 @@ rotation = 5.51349
 scale = Vector2( 1e-05, 1e-05 )
 z_index = -1
 frames = SubResource( 14 )
-frame = 6
+frame = 1
 playing = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Backgounds"]

@@ -169,6 +169,9 @@ position = Vector2( 0, 32 )
 [node name="end" parent="movingSpike" index="1"]
 position = Vector2( 0, -32 )
 
+[node name="Sprite" parent="movingSpike" index="2"]
+frame = 5
+
 [node name="movingSpike2" parent="." instance=ExtResource( 21 )]
 position = Vector2( -32, 32 )
 seconds = 4.0
@@ -180,7 +183,7 @@ position = Vector2( 0, -32 )
 position = Vector2( 0, 32 )
 
 [node name="Sprite" parent="movingSpike2" index="2"]
-frame = 7
+frame = 4
 [connection signal="body_entered" from="AnimatedSprite/Area2D" to="AnimatedSprite" method="_on_Area2D_body_entered"]
 
 [editable path="movingSpike"]

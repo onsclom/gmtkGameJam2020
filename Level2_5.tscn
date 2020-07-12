@@ -90,18 +90,6 @@ polygon = PoolVector2Array( -80, -80, 80, -80, 80, -64, -80, -64, -80, -80 )
 position = Vector2( 96, 80 )
 polygon = PoolVector2Array( -80, -80, 80, -80, 80, -64, -80, -64, -80, -80 )
 
-[node name="RotationTrigger" parent="StaticBody2D" instance=ExtResource( 7 )]
-dir = -1
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D/RotationTrigger"]
-polygon = PoolVector2Array( -128, -64, -80, -64, -80, 0, -128, 0 )
-
-[node name="RotationTrigger2" parent="StaticBody2D" instance=ExtResource( 7 )]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D/RotationTrigger2"]
-position = Vector2( 208, 0 )
-polygon = PoolVector2Array( -128, -64, -80, -64, -80, 0, -128, 0 )
-
 [node name="window texture thing" type="Sprite" parent="."]
 position = Vector2( -1.52588e-05, -1.52588e-05 )
 texture = ExtResource( 4 )
@@ -120,6 +108,18 @@ position = Vector2( 0, -112 )
 texture = ExtResource( 1 )
 
 [node name="Rotations" type="Node2D" parent="."]
+
+[node name="RotationTrigger" parent="Rotations" instance=ExtResource( 7 )]
+dir = -1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rotations/RotationTrigger"]
+polygon = PoolVector2Array( -128, -64, -80, -64, -80, 0, -128, 0 )
+
+[node name="RotationTrigger2" parent="Rotations" instance=ExtResource( 7 )]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Rotations/RotationTrigger2"]
+position = Vector2( 208, 0 )
+polygon = PoolVector2Array( -128, -64, -80, -64, -80, 0, -128, 0 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( 0, -112 )
@@ -207,9 +207,6 @@ position = Vector2( 0, -16 )
 [node name="end" parent="movingSpike" index="1"]
 position = Vector2( 0, 16 )
 
-[node name="Sprite" parent="movingSpike" index="2"]
-frame = 6
-
 [node name="movingSpike2" parent="." instance=ExtResource( 2 )]
 position = Vector2( -32, -32 )
 
@@ -218,9 +215,6 @@ position = Vector2( 0, 24 )
 
 [node name="end" parent="movingSpike2" index="1"]
 position = Vector2( 0, -24 )
-
-[node name="Sprite" parent="movingSpike2" index="2"]
-frame = 6
 
 [editable path="movingSpike"]
 
