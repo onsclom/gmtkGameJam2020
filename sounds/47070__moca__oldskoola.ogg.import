@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/47070__moca__oldskoola.ogg-ae6db34b8935cf557d93e0fca49a2cf4.oggstr"
+
+[deps]
+
+source_file="res://sounds/47070__moca__oldskoola.ogg"
+dest_files=[ "res://.import/47070__moca__oldskoola.ogg-ae6db34b8935cf557d93e0fca49a2cf4.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

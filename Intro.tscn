@@ -1,4 +1,4 @@
-[gd_scene load_steps=229 format=2]
+[gd_scene load_steps=231 format=2]
 
 [ext_resource path="res://intro/Startup5/gmtk-intro151.png" type="Texture" id=1]
 [ext_resource path="res://intro/Idle1/gmtk-intro13.png" type="Texture" id=2]
@@ -226,6 +226,8 @@
 [ext_resource path="res://mouseAnim/orbman-intro-mouse4.png" type="Texture" id=224]
 [ext_resource path="res://mouseAnim/orbman-intro-mouse2.png" type="Texture" id=225]
 [ext_resource path="res://mouseAnim/orbman-intro-mouse5.png" type="Texture" id=226]
+[ext_resource path="res://sounds/dance_music.ogg" type="AudioStream" id=227]
+[ext_resource path="res://sounds/scratch.wav" type="AudioStream" id=228]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -299,7 +301,7 @@ animations = [ {
 position = Vector2( 208, 208 )
 frames = SubResource( 1 )
 animation = "Idle0"
-frame = 1
+frame = 5
 playing = true
 script = ExtResource( 218 )
 
@@ -308,6 +310,12 @@ visible = false
 position = Vector2( 384, 384 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 7
+frame = 5
 playing = true
+
+[node name="dance_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 227 )
+
+[node name="scratch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 228 )
 [connection signal="animation_finished" from="AnimatedSprite" to="AnimatedSprite" method="_on_AnimatedSprite_animation_finished"]

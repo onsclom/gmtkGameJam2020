@@ -83,6 +83,10 @@ func playerDeath():
 	pass
 	
 func changeMap(mapNum):
+	
+	if mapNum != 0:
+		$goal.playing=true
+	
 	if $RotationNode != null:
 		$RotationNode.name = "oldMap"
 		$oldMap.queue_free()
@@ -117,8 +121,10 @@ func resetRotations():
 func rotate(dir):
 	if dir == 1:
 		$CanvasLayer/AnimatedSprite.play("right")
+		$clockwise.playing = true
 	elif dir == -1:
 		$CanvasLayer/AnimatedSprite.play("left")
+		$counter.playing = true
 		
 	var oldResetcount = rotationResetCount
 		

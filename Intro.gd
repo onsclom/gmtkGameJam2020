@@ -7,6 +7,7 @@ var animations = ["Startup0", "Idle0", "Startup1", "Idle1",
 var cur = 0
 
 var time = 0
+var scratch = false
 
 func change_scene(scene, delay = 0.0):
 	yield(get_tree().create_timer(delay), "timeout")
@@ -34,6 +35,15 @@ func _process(delta):
 		cur += 1
 		play(animations[cur])
 		time = 0
+		
+	if animation == "Idle1" and get_parent().get_node("dance_music").playing == false:
+		get_parent().get_node("dance_music").playing = true
+	elif animation == "Startup2" and scratch == false:
+		scratch = true
+		get_parent().get_node("dance_music").playing = false
+		get_parent().get_node("scratch").playing = true
+		
+		
 
 
 func _on_AnimatedSprite_animation_finished():

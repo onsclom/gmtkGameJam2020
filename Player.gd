@@ -46,6 +46,7 @@ func _physics_process(delta):
 	
 	if grounded and Input.is_action_just_pressed("jump"):
 		y_velo = -JUMP_FORCE
+		$jumpSound.playing = true
 	elif Input.is_action_just_pressed("jump"):
 		possiblyWallJump(move_dir)
 	elif grounded:
@@ -107,11 +108,13 @@ func _physics_process(delta):
 func possiblyWallJump(move_dir):
 	if $left.is_colliding():
 		y_velo = -JUMP_FORCE
+		$jumpSound.playing = true
 		walljump_dir = 1
 		last_walljump = 0
 		secondJump = true
 	elif $right.is_colliding():
 		y_velo = -JUMP_FORCE
+		$jumpSound.playing = true
 		walljump_dir = -1
 		last_walljump = 0
 		secondJump = true
@@ -119,6 +122,7 @@ func possiblyWallJump(move_dir):
 		#DOUBLE JUMP
 		if secondJump == true:
 			y_velo = -JUMP_FORCE
+			$jumpSound.playing = true
 			secondJump = false 
 		
 	
