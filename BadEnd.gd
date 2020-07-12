@@ -19,8 +19,18 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+
+	if get_node("../Label") != null and get_node("../Label").text == "":
+		get_node("../Label").text = "time remaining: " + str(GameManager.timeRemaining) + "\ndeaths: " + str(GameManager.deaths) + ""
+	
 	if Input.is_action_just_pressed("restart"):
 		change_scene(GameManager.mainScene)
+	
+	if animation == "idle":
+		if get_node("../Label") != null:
+			get_node("../Label").visible = true
+			
+	
 	pass
 
 

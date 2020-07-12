@@ -155,17 +155,17 @@ position = Vector2( -112, 112 )
 texture = ExtResource( 2 )
 
 [node name="LevelFinish" parent="." instance=ExtResource( 1 )]
-position = Vector2( 64, -96 )
+position = Vector2( 64, -80 )
 
 [node name="Label4" type="Label" parent="."]
-visible = false
 modulate = Color( 1, 1, 1, 0 )
-margin_left = -1.52588e-05
-margin_top = -112.0
-margin_right = 155.0
-margin_bottom = -81.0
+margin_left = -32.0
+margin_top = -128.0
+margin_right = 123.0
+margin_bottom = -97.0
 custom_fonts/font = SubResource( 2 )
-text = "enter to continue"
+text = "beat all the levels
+before time runs out"
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -174,6 +174,7 @@ __meta__ = {
 [node name="Area2D" type="Area2D" parent="Label4"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Label4/Area2D"]
+position = Vector2( 16, 0 )
 polygon = PoolVector2Array( -48, -16, -48, 48, 128, 48, 128, -16 )
 
 [node name="Rotations" type="Node2D" parent="."]

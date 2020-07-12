@@ -22,6 +22,8 @@ onready var player = $RotationNode/KinematicBody2D
 var playerTscn = preload("res://KinematicBody2D.tscn")
 var badEnd = preload("res://BadEnd.tscn")
 
+var deaths = 0
+
 
 var startLevel = 0
 var levels = [preload("res://TutorialLevel.tscn"), preload("res://Level1.tscn"), preload("res://Level1_5.tscn"), preload("res://Level2.tscn"), preload("res://Level2_5.tscn"), preload("res://Level3.tscn"), preload("res://FinalLevel.tscn")]
@@ -46,9 +48,13 @@ func _process(delta):
 	if Input.is_action_just_pressed("left_rotate"):
 		rotate(-1)
 		
+	GameManager.deaths = deaths
+	GameManager.timeRemaining = ceil(time)
+		
 	if started: 
 		time -= delta
-	$CanvasLayer/time.text = str(ceil(time))
+	if ceil(time) > 0:
+		$CanvasLayer/time.text = str(ceil(time))
 	
 	if time < 0:
 		change_scene(GameManager.badScene)
@@ -67,6 +73,7 @@ func _physics_process(delta):
 	pass
 	
 func playerDeath():
+	deaths += 1
 	print("gameholder got death!")
 	player.queue_free()
 	
@@ -100,6 +107,7 @@ func changeMap(mapNum):
 	
 	if mapNum == 1:
 		#then its level 1! start the timer!
+		deaths = 0
 		started = true
 		time = totalTime
 		$song.playing = true

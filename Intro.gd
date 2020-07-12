@@ -8,6 +8,7 @@ var cur = 0
 
 var time = 0
 var scratch = false
+var dramatic = false
 
 func change_scene(scene, delay = 0.0):
 	yield(get_tree().create_timer(delay), "timeout")
@@ -31,10 +32,11 @@ func _process(delta):
 		
 	
 	if Input.is_action_just_pressed("click"):
-		print("yay")
-		cur += 1
-		play(animations[cur])
-		time = 0
+		if cur != 10:
+			print("yay")
+			cur += 1
+			play(animations[cur])
+			time = 0
 		
 	if animation == "Idle1" and get_parent().get_node("dance_music").playing == false:
 		get_parent().get_node("dance_music").playing = true
@@ -42,7 +44,9 @@ func _process(delta):
 		scratch = true
 		get_parent().get_node("dance_music").playing = false
 		get_parent().get_node("scratch").playing = true
-		
+	elif animation == "Startup3" and dramatic == false:
+		dramatic = true
+		get_parent().get_node("dramatic").playing = true
 		
 
 

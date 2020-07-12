@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://GameHolder.gd" type="Script" id=1]
 [ext_resource path="res://spaceBG.png" type="Texture" id=2]
@@ -13,6 +13,16 @@
 [ext_resource path="res://sounds/sfx/goal.wav" type="AudioStream" id=11]
 [ext_resource path="res://sounds/sfx/counter.wav" type="AudioStream" id=12]
 [ext_resource path="res://sounds/song.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Backgounds.gd" type="Script" id=14]
+[ext_resource path="res://sunStuff/gmtk-sun-bounce/gmtk-sun5.png" type="Texture" id=15]
+[ext_resource path="res://sunStuff/gmtk-sun-bounce/gmtk-sun4.png" type="Texture" id=16]
+[ext_resource path="res://sunStuff/gmtk-sun-bounce/gmtk-sun8.png" type="Texture" id=17]
+[ext_resource path="res://sunStuff/gmtk-sun-bounce/gmtk-sun1.png" type="Texture" id=18]
+[ext_resource path="res://sunStuff/gmtk-sun-bounce/gmtk-sun6.png" type="Texture" id=19]
+[ext_resource path="res://sunStuff/gmtk-sun-bounce/gmtk-sun9.png" type="Texture" id=20]
+[ext_resource path="res://sunStuff/gmtk-sun-bounce/gmtk-sun2.png" type="Texture" id=21]
+[ext_resource path="res://sunStuff/gmtk-sun-bounce/gmtk-sun7.png" type="Texture" id=22]
+[ext_resource path="res://sunStuff/gmtk-sun-bounce/gmtk-sun3.png" type="Texture" id=23]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 6 )
@@ -78,12 +88,16 @@ animations = [ {
 "speed": 14.0
 } ]
 
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ ExtResource( 18 ), ExtResource( 21 ), ExtResource( 23 ), ExtResource( 16 ), ExtResource( 15 ), ExtResource( 19 ), ExtResource( 22 ), ExtResource( 17 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [node name="GameHolder" type="Node2D"]
 script = ExtResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 208, 208 )
-texture = ExtResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
@@ -130,7 +144,6 @@ margin_top = 32.0
 margin_right = 42.0
 margin_bottom = 46.0
 custom_fonts/font = SubResource( 8 )
-text = "0"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -159,4 +172,26 @@ stream = ExtResource( 12 )
 
 [node name="goal" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
+
+[node name="Backgounds" type="Node" parent="."]
+script = ExtResource( 14 )
+
+[node name="first" type="Sprite" parent="Backgounds"]
+z_index = -1
+texture = ExtResource( 2 )
+offset = Vector2( 208, 208 )
+
+[node name="second" type="Sprite" parent="Backgounds"]
+z_index = -1
+texture = ExtResource( 2 )
+offset = Vector2( 208, 208 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Backgounds"]
+position = Vector2( 208, 208 )
+rotation = 5.51349
+scale = Vector2( 1e-05, 1e-05 )
+z_index = -1
+frames = SubResource( 14 )
+frame = 8
+playing = true
 [connection signal="animation_finished" from="CanvasLayer/Flash" to="CanvasLayer/Flash" method="_on_Flash_animation_finished"]

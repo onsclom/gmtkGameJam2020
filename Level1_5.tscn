@@ -162,4 +162,7 @@ position = Vector2( -24, 16 )
 [node name="end" parent="movingSpike2" index="1"]
 position = Vector2( -24, 64 )
 
+[node name="Sprite" parent="movingSpike2" index="2"]
+frame = 2
+
 [editable path="movingSpike2"]
