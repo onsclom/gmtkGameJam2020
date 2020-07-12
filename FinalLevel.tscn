@@ -66,7 +66,7 @@ animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 17 ), ExtResource( 11 ), ExtResource( 16 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 15 ), ExtResource( 6 ), ExtResource( 14 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 14.0
 } ]
 
 [node name="RotationNode" type="Node2D"]
@@ -128,6 +128,8 @@ polygon = PoolVector2Array( 56, 64, 136, 64, 136, 128, 56, 128 )
 position = Vector2( 72, -80 )
 rotation = 3.14159
 frames = SubResource( 2 )
+frame = 11
+playing = true
 script = ExtResource( 3 )
 
 [node name="Area2D" type="Area2D" parent="AnimatedSprite"]
@@ -170,7 +172,7 @@ position = Vector2( 0, 32 )
 position = Vector2( 0, -32 )
 
 [node name="Sprite" parent="movingSpike" index="2"]
-frame = 5
+frame = 3
 
 [node name="movingSpike2" parent="." instance=ExtResource( 21 )]
 position = Vector2( -32, 32 )
@@ -183,7 +185,7 @@ position = Vector2( 0, -32 )
 position = Vector2( 0, 32 )
 
 [node name="Sprite" parent="movingSpike2" index="2"]
-frame = 4
+frame = 2
 [connection signal="body_entered" from="AnimatedSprite/Area2D" to="AnimatedSprite" method="_on_Area2D_body_entered"]
 
 [editable path="movingSpike"]

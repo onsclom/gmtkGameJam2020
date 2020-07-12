@@ -165,7 +165,7 @@ position = Vector2( 0, -24 )
 position = Vector2( 0, 24 )
 
 [node name="Sprite" parent="movingSpike" index="2"]
-frame = 2
+frame = 4
 
 [node name="LevelFinish" parent="." instance=ExtResource( 7 )]
 position = Vector2( 104, 88 )
