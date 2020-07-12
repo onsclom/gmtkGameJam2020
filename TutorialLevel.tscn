@@ -146,7 +146,7 @@ __meta__ = {
 [node name="Area2D" type="Area2D" parent="Label3"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Label3/Area2D"]
-polygon = PoolVector2Array( -16, -16, -16, 144, 64, 144, 48, -16 )
+polygon = PoolVector2Array( -16, -16, -16, 144, 64, 144, 32, -16 )
 
 [node name="Spawn" type="Position2D" parent="."]
 position = Vector2( -112, 112 )
@@ -174,7 +174,7 @@ __meta__ = {
 [node name="Area2D" type="Area2D" parent="Label4"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Label4/Area2D"]
-position = Vector2( 16, 0 )
+position = Vector2( 64, 16 )
 polygon = PoolVector2Array( -48, -16, -48, 48, 128, 48, 128, -16 )
 
 [node name="Rotations" type="Node2D" parent="."]

@@ -303,7 +303,7 @@ animations = [ {
 position = Vector2( 208, 208 )
 frames = SubResource( 1 )
 animation = "Idle0"
-frame = 10
+frame = 4
 playing = true
 script = ExtResource( 218 )
 
@@ -312,7 +312,7 @@ visible = false
 position = Vector2( 384, 384 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="dance_music" type="AudioStreamPlayer" parent="."]

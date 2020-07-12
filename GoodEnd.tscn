@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=2]
+[gd_scene load_steps=91 format=2]
 
 [ext_resource path="res://m6x11.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://goodEnd/Startup1/gmtk-goodend3.png" type="Texture" id=2]
@@ -87,6 +87,7 @@
 [ext_resource path="res://goodEnd/Idle1/gmtk-goodend82.png" type="Texture" id=85]
 [ext_resource path="res://goodEnd/Idle1/gmtk-goodend83.png" type="Texture" id=86]
 [ext_resource path="res://goodEnd/Idle1/gmtk-goodend84.png" type="Texture" id=87]
+[ext_resource path="res://new_sounds/399294__komit__synth-sparkle.wav" type="AudioStream" id=88]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -116,12 +117,16 @@ script = ExtResource( 6 )
 
 [node name="Label" type="Label" parent="."]
 visible = false
-margin_top = 24.0
+margin_top = 48.0
 margin_right = 416.0
-margin_bottom = 88.0
+margin_bottom = 112.0
 custom_fonts/font = SubResource( 2 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 88 )
+autoplay = true
 [connection signal="animation_finished" from="AnimatedSprite" to="AnimatedSprite" method="_on_AnimatedSprite_animation_finished"]

@@ -29,5 +29,5 @@ func _process(delta):
 		var size = (get_node("../").totalTime - get_node("../").time) / get_node("../").totalTime
 		print(size)
 		$AnimatedSprite.scale = Vector2(size,size)
-		$CanvasModulate.color =  Color.from_hsv(38/255, size/2.0, 1.0)
+		$CanvasModulate.color =  Color.from_hsv(38/255, size/4.0, 1.0)
 	$AnimatedSprite.rotation += delta*10

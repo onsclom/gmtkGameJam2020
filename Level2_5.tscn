@@ -208,7 +208,7 @@ position = Vector2( 0, -16 )
 position = Vector2( 0, 16 )
 
 [node name="Sprite" parent="movingSpike" index="2"]
-frame = 5
+frame = 6
 
 [node name="movingSpike2" parent="." instance=ExtResource( 2 )]
 position = Vector2( -32, -32 )
@@ -220,7 +220,7 @@ position = Vector2( 0, 24 )
 position = Vector2( 0, -24 )
 
 [node name="Sprite" parent="movingSpike2" index="2"]
-frame = 5
+frame = 6
 
 [editable path="movingSpike"]
 

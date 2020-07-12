@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://GameHolder.gd" type="Script" id=1]
 [ext_resource path="res://spaceBG.png" type="Texture" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://sunStuff/gmtk-sun-bounce/gmtk-sun2.png" type="Texture" id=21]
 [ext_resource path="res://sunStuff/gmtk-sun-bounce/gmtk-sun7.png" type="Texture" id=22]
 [ext_resource path="res://sunStuff/gmtk-sun-bounce/gmtk-sun3.png" type="Texture" id=23]
+[ext_resource path="res://sounds/sfx/clockwise.wav" type="AudioStream" id=24]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 6 )
@@ -135,6 +136,7 @@ __meta__ = {
 position = Vector2( 396, 40 )
 frames = SubResource( 7 )
 animation = "right"
+frame = 1
 playing = true
 
 [node name="time" type="Label" parent="CanvasLayer"]
@@ -176,7 +178,7 @@ stream = ExtResource( 12 )
 stream = ExtResource( 13 )
 
 [node name="clockwise" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 12 )
+stream = ExtResource( 24 )
 
 [node name="goal" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
@@ -200,7 +202,7 @@ rotation = 5.51349
 scale = Vector2( 1e-05, 1e-05 )
 z_index = -1
 frames = SubResource( 14 )
-frame = 5
+frame = 6
 playing = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Backgounds"]
