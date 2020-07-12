@@ -1,7 +1,8 @@
 extends Node
 
 var gameHolder
-
+var badScene = preload("res://BadEnd.tscn")
+var mainScene = preload("res://MainScene.tscn")
 
 # Declare member variables here. Examples:
 # var a = 2

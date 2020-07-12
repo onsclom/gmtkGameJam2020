@@ -13,16 +13,25 @@ var timeToRotate = 1.5
 var t = 0
 var rotationResetCount = 0
 
+var totalTime = 180
+
 var time = 0
 var started = false
 
 onready var player = $RotationNode/KinematicBody2D
 var playerTscn = preload("res://KinematicBody2D.tscn")
+var badEnd = preload("res://BadEnd.tscn")
 
 
 var startLevel = 0
 var levels = [preload("res://TutorialLevel.tscn"), preload("res://Level1.tscn"), preload("res://Level1_5.tscn"), preload("res://Level2.tscn"), preload("res://Level2_5.tscn"), preload("res://Level3.tscn"), preload("res://FinalLevel.tscn")]
 
+var badendTscn = 0
+
+func change_scene(scene, delay = 0):
+	yield(get_tree().create_timer(delay), "timeout")
+	#animation play fade
+	get_tree().change_scene_to(scene)
 
 func _ready():
 	GameManager.gameHolder = self
@@ -40,6 +49,10 @@ func _process(delta):
 	if started: 
 		time -= delta
 	$CanvasLayer/time.text = str(ceil(time))
+	
+	if time < 0:
+		change_scene(GameManager.badScene)
+		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
@@ -59,11 +72,13 @@ func playerDeath():
 	
 	var newPlayer = playerTscn.instance()
 	#must get rid of old player name
-	player.name = "a"
+	player.name = "oldPlayer"
 	newPlayer.name = "KinematicBody2D"
 	player = newPlayer
 	$RotationNode.add_child(newPlayer)
 	newPlayer.position = $RotationNode/Spawn.position
+	
+	$CanvasLayer/Flash.flash()
 	
 	pass
 	
@@ -82,9 +97,14 @@ func changeMap(mapNum):
 	if mapNum == 1:
 		#then its level 1! start the timer!
 		started = true
-		time = 180
+		time = totalTime
+	if mapNum == len(levels)-1:
+		started = false
 	
 	resetRotations()
+	
+func changeScene(sceneTscn):
+	pass
 	
 func resetRotations():
 	$CanvasLayer/AnimatedSprite.visible = false

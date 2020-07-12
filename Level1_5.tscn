@@ -157,9 +157,9 @@ position = Vector2( 32, -88 )
 seconds = 3.0
 
 [node name="start" parent="movingSpike2" index="0"]
-position = Vector2( -24, 8 )
+position = Vector2( -24, 16 )
 
 [node name="end" parent="movingSpike2" index="1"]
-position = Vector2( -24, 72 )
+position = Vector2( -24, 64 )
 
 [editable path="movingSpike2"]

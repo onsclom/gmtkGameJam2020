@@ -1,0 +1,100 @@
+[gd_scene load_steps=76 format=2]
+
+[ext_resource path="res://badEnd/Startup1/gmtk-badend11.png" type="Texture" id=1]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend54.png" type="Texture" id=2]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend55.png" type="Texture" id=3]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend23.png" type="Texture" id=4]
+[ext_resource path="res://badEnd/Idle1/gmtk-badend62.png" type="Texture" id=5]
+[ext_resource path="res://BadEnd.gd" type="Script" id=6]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend40.png" type="Texture" id=7]
+[ext_resource path="res://badEnd/Idle1/gmtk-badend67.png" type="Texture" id=8]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend2.png" type="Texture" id=9]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend1.png" type="Texture" id=10]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend30.png" type="Texture" id=11]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend7.png" type="Texture" id=12]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend3.png" type="Texture" id=13]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend4.png" type="Texture" id=14]
+[ext_resource path="res://badEnd/Idle1/gmtk-badend71.png" type="Texture" id=15]
+[ext_resource path="res://badEnd/Idle1/gmtk-badend64.png" type="Texture" id=16]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend6.png" type="Texture" id=17]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend47.png" type="Texture" id=18]
+[ext_resource path="res://badEnd/Idle1/gmtk-badend63.png" type="Texture" id=19]
+[ext_resource path="res://badEnd/Idle1/gmtk-badend70.png" type="Texture" id=20]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend32.png" type="Texture" id=21]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend9.png" type="Texture" id=22]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend8.png" type="Texture" id=23]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend22.png" type="Texture" id=24]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend26.png" type="Texture" id=25]
+[ext_resource path="res://badEnd/Idle1/gmtk-badend69.png" type="Texture" id=26]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend35.png" type="Texture" id=27]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend51.png" type="Texture" id=28]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend50.png" type="Texture" id=29]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend49.png" type="Texture" id=30]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend13.png" type="Texture" id=31]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend12.png" type="Texture" id=32]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend39.png" type="Texture" id=33]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend37.png" type="Texture" id=34]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend53.png" type="Texture" id=35]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend52.png" type="Texture" id=36]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend41.png" type="Texture" id=37]
+[ext_resource path="res://badEnd/Idle1/gmtk-badend66.png" type="Texture" id=38]
+[ext_resource path="res://badEnd/Idle1/gmtk-badend68.png" type="Texture" id=39]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend36.png" type="Texture" id=40]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend60.png" type="Texture" id=41]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend43.png" type="Texture" id=42]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend42.png" type="Texture" id=43]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend44.png" type="Texture" id=44]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend14.png" type="Texture" id=45]
+[ext_resource path="res://badEnd/Idle1/gmtk-badend65.png" type="Texture" id=46]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend19.png" type="Texture" id=47]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend16.png" type="Texture" id=48]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend46.png" type="Texture" id=49]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend45.png" type="Texture" id=50]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend5.png" type="Texture" id=51]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend17.png" type="Texture" id=52]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend15.png" type="Texture" id=53]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend25.png" type="Texture" id=54]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend24.png" type="Texture" id=55]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend38.png" type="Texture" id=56]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend10.png" type="Texture" id=57]
+[ext_resource path="res://badEnd/Idle1/gmtk-badend73.png" type="Texture" id=58]
+[ext_resource path="res://badEnd/Idle1/gmtk-badend72.png" type="Texture" id=59]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend29.png" type="Texture" id=60]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend58.png" type="Texture" id=61]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend21.png" type="Texture" id=62]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend20.png" type="Texture" id=63]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend34.png" type="Texture" id=64]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend33.png" type="Texture" id=65]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend18.png" type="Texture" id=66]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend31.png" type="Texture" id=67]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend28.png" type="Texture" id=68]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend27.png" type="Texture" id=69]
+[ext_resource path="res://badEnd/Idle1/gmtk-badend61.png" type="Texture" id=70]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend59.png" type="Texture" id=71]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend57.png" type="Texture" id=72]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend56.png" type="Texture" id=73]
+[ext_resource path="res://badEnd/Startup1/gmtk-badend48.png" type="Texture" id=74]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 70 ), ExtResource( 5 ), ExtResource( 19 ), ExtResource( 16 ), ExtResource( 46 ), ExtResource( 38 ), ExtResource( 8 ), ExtResource( 39 ), ExtResource( 26 ), ExtResource( 20 ), ExtResource( 15 ), ExtResource( 59 ), ExtResource( 58 ) ],
+"loop": true,
+"name": "idle",
+"speed": 14.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 51 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 23 ), ExtResource( 22 ), ExtResource( 57 ), ExtResource( 1 ), ExtResource( 32 ), ExtResource( 31 ), ExtResource( 45 ), ExtResource( 53 ), ExtResource( 48 ), ExtResource( 52 ), ExtResource( 66 ), ExtResource( 47 ), ExtResource( 63 ), ExtResource( 62 ), ExtResource( 24 ), ExtResource( 4 ), ExtResource( 55 ), ExtResource( 54 ), ExtResource( 25 ), ExtResource( 69 ), ExtResource( 68 ), ExtResource( 60 ), ExtResource( 11 ), ExtResource( 67 ), ExtResource( 21 ), ExtResource( 65 ), ExtResource( 64 ), ExtResource( 27 ), ExtResource( 40 ), ExtResource( 34 ), ExtResource( 56 ), ExtResource( 33 ), ExtResource( 7 ), ExtResource( 37 ), ExtResource( 43 ), ExtResource( 42 ), ExtResource( 44 ), ExtResource( 50 ), ExtResource( 49 ), ExtResource( 18 ), ExtResource( 74 ), ExtResource( 30 ), ExtResource( 29 ), ExtResource( 28 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 73 ), ExtResource( 72 ), ExtResource( 61 ), ExtResource( 71 ), ExtResource( 41 ) ],
+"loop": true,
+"name": "startup",
+"speed": 14.0
+} ]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 208, 208 )
+frames = SubResource( 1 )
+animation = "startup"
+script = ExtResource( 6 )
+
+[node name="Rotations" type="Node2D" parent="."]
+[connection signal="animation_finished" from="AnimatedSprite" to="AnimatedSprite" method="_on_AnimatedSprite_animation_finished"]

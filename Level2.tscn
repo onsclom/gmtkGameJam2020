@@ -104,37 +104,49 @@ polygon = PoolVector2Array( 80, 80, 128, 80, 128, 128, 80, 128 )
 position = Vector2( -32, -96 )
 
 [node name="start" parent="movingSpike" index="0"]
-position = Vector2( 0, -32 )
+position = Vector2( 0, -24 )
 
 [node name="end" parent="movingSpike" index="1"]
-position = Vector2( 0, 16 )
+position = Vector2( 0, 8 )
+
+[node name="Sprite" parent="movingSpike" index="2"]
+frame = 5
 
 [node name="movingSpike3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 32, 112 )
 
 [node name="start" parent="movingSpike3" index="0"]
-position = Vector2( 0, -32 )
+position = Vector2( 0, -24 )
 
 [node name="end" parent="movingSpike3" index="1"]
-position = Vector2( 0, 16 )
+position = Vector2( 0, 8 )
+
+[node name="Sprite" parent="movingSpike3" index="2"]
+frame = 5
 
 [node name="movingSpike2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 32, -96 )
 
 [node name="start" parent="movingSpike2" index="0"]
-position = Vector2( 0, 16 )
+position = Vector2( 0, 8 )
 
 [node name="end" parent="movingSpike2" index="1"]
-position = Vector2( 0, -32 )
+position = Vector2( 0, -24 )
+
+[node name="Sprite" parent="movingSpike2" index="2"]
+frame = 5
 
 [node name="movingSpike4" parent="." instance=ExtResource( 1 )]
 position = Vector2( -32, 112 )
 
 [node name="start" parent="movingSpike4" index="0"]
-position = Vector2( 0, 16 )
+position = Vector2( 0, 8 )
 
 [node name="end" parent="movingSpike4" index="1"]
-position = Vector2( 0, -32 )
+position = Vector2( 0, -24 )
+
+[node name="Sprite" parent="movingSpike4" index="2"]
+frame = 5
 
 [node name="Fire" parent="." instance=ExtResource( 2 )]
 position = Vector2( 88, -48 )
@@ -162,19 +174,25 @@ position = Vector2( -72, -64 )
 seconds = 4.0
 
 [node name="start" parent="movingSpike5" index="0"]
-position = Vector2( -56, 0 )
+position = Vector2( -48, 0 )
 
 [node name="end" parent="movingSpike5" index="1"]
-position = Vector2( 136, 0 )
+position = Vector2( 128, 0 )
+
+[node name="Sprite" parent="movingSpike5" index="2"]
+frame = 5
 
 [node name="movingSpike6" parent="." instance=ExtResource( 1 )]
 position = Vector2( -48, -16 )
 
 [node name="start" parent="movingSpike6" index="0"]
-position = Vector2( 64, 0 )
+position = Vector2( 56, 0 )
 
 [node name="end" parent="movingSpike6" index="1"]
-position = Vector2( -32, 0 )
+position = Vector2( -24, 0 )
+
+[node name="Sprite" parent="movingSpike6" index="2"]
+frame = 5
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
 position = Vector2( -112, -112 )
