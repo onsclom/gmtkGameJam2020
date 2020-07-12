@@ -201,7 +201,7 @@ rotation = 5.51349
 scale = Vector2( 1e-05, 1e-05 )
 z_index = -1
 frames = SubResource( 14 )
-frame = 2
+frame = 8
 playing = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Backgounds"]

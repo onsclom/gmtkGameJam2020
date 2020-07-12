@@ -128,7 +128,7 @@ polygon = PoolVector2Array( 56, 64, 136, 64, 136, 128, 56, 128 )
 position = Vector2( 72, -80 )
 rotation = 3.14159
 frames = SubResource( 2 )
-frame = 11
+frame = 1
 playing = true
 script = ExtResource( 3 )
 
