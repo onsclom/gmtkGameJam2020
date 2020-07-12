@@ -149,7 +149,7 @@ __meta__ = {
 polygon = PoolVector2Array( -16, -16, -16, 144, 64, 144, 48, -16 )
 
 [node name="Spawn" type="Position2D" parent="."]
-position = Vector2( -112, 64 )
+position = Vector2( -112, 112 )
 
 [node name="Sprite" type="Sprite" parent="Spawn"]
 texture = ExtResource( 2 )
@@ -179,7 +179,7 @@ polygon = PoolVector2Array( -48, -16, -48, 48, 128, 48, 128, -16 )
 [node name="Rotations" type="Node2D" parent="."]
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( -112, 64 )
+position = Vector2( -112, 112 )
 [connection signal="body_entered" from="first/Area2D" to="first" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="first/Area2D" to="first" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Label2/Area2D" to="Label2" method="_on_Area2D_body_entered"]

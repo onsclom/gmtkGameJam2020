@@ -175,18 +175,6 @@ position = Vector2( 48, -80 )
 [node name="Fire23" parent="." instance=ExtResource( 1 )]
 position = Vector2( 40, -80 )
 
-[node name="Fire28" parent="." instance=ExtResource( 1 )]
-position = Vector2( -16, -80 )
-
-[node name="Fire29" parent="." instance=ExtResource( 1 )]
-position = Vector2( -24, -80 )
-
-[node name="Fire30" parent="." instance=ExtResource( 1 )]
-position = Vector2( -32, -80 )
-
-[node name="Fire31" parent="." instance=ExtResource( 1 )]
-position = Vector2( -40, -80 )
-
 [node name="Fire32" parent="." instance=ExtResource( 1 )]
 position = Vector2( -104, -48 )
 
@@ -200,19 +188,19 @@ position = Vector2( -120, 32 )
 position = Vector2( -104, 32 )
 
 [node name="Fire24" parent="." instance=ExtResource( 1 )]
-position = Vector2( 24, -128 )
+position = Vector2( -16, -128 )
 rotation = 3.14159
 
 [node name="Fire25" parent="." instance=ExtResource( 1 )]
-position = Vector2( 16, -128 )
+position = Vector2( -24, -128 )
 rotation = 3.14159
 
 [node name="Fire26" parent="." instance=ExtResource( 1 )]
-position = Vector2( 8, -128 )
+position = Vector2( -32, -128 )
 rotation = 3.14159
 
 [node name="Fire27" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, -128 )
+position = Vector2( -40, -128 )
 rotation = 3.14159
 
 [node name="Fire17" parent="." instance=ExtResource( 1 )]
@@ -265,7 +253,7 @@ position = Vector2( 0, 40 )
 
 [node name="LevelFinish" parent="." instance=ExtResource( 6 )]
 position = Vector2( -104, 104 )
-nextLevelNum = 4
+nextLevelNum = 6
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 5 )]
 

@@ -91,7 +91,7 @@ __meta__ = {
 position = Vector2( 396, 40 )
 frames = SubResource( 7 )
 animation = "right"
-frame = 2
+frame = 1
 playing = true
 
 [node name="time" type="Label" parent="CanvasLayer"]

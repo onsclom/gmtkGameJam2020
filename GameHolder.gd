@@ -21,7 +21,7 @@ var playerTscn = preload("res://KinematicBody2D.tscn")
 
 
 var startLevel = 0
-var levels = [preload("res://TutorialLevel.tscn"), preload("res://Level1.tscn"), preload("res://Level2.tscn"), preload("res://Level3.tscn"), preload("res://FinalLevel.tscn")]
+var levels = [preload("res://TutorialLevel.tscn"), preload("res://Level1.tscn"), preload("res://Level1_5.tscn"), preload("res://Level2.tscn"), preload("res://Level2_5.tscn"), preload("res://Level3.tscn"), preload("res://FinalLevel.tscn")]
 
 
 func _ready():
@@ -82,7 +82,7 @@ func changeMap(mapNum):
 	if mapNum == 1:
 		#then its level 1! start the timer!
 		started = true
-		time = 300
+		time = 180
 	
 	resetRotations()
 	
