@@ -43,9 +43,6 @@ func _ready():
 func _process(delta):
 	
 	#debug stuff
-	if Input.is_action_just_pressed("right_rotate"):
-		#rotate(1)
-		time -= 10
 #	if Input.is_action_just_pressed("left_rotate"):
 #		rotate(-1)
 		
