@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/449069__ricniclas__fanfare.wav-5af43b1b1459dc20e71683155955b2d0.sample"
+
+[deps]
+
+source_file="res://sounds/449069__ricniclas__fanfare.wav"
+dest_files=[ "res://.import/449069__ricniclas__fanfare.wav-5af43b1b1459dc20e71683155955b2d0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

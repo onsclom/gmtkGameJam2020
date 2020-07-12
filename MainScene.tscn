@@ -135,7 +135,6 @@ __meta__ = {
 position = Vector2( 396, 40 )
 frames = SubResource( 7 )
 animation = "right"
-frame = 2
 playing = true
 
 [node name="time" type="Label" parent="CanvasLayer"]
@@ -151,6 +150,15 @@ __meta__ = {
 
 [node name="Flash" type="AnimatedSprite" parent="CanvasLayer"]
 modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 208, 208 )
+z_index = 5
+frames = SubResource( 13 )
+animation = "flash"
+frame = 3
+script = ExtResource( 8 )
+
+[node name="DarkFlash" type="AnimatedSprite" parent="CanvasLayer"]
+modulate = Color( 0, 0, 0, 0 )
 position = Vector2( 208, 208 )
 z_index = 5
 frames = SubResource( 13 )
@@ -192,6 +200,9 @@ rotation = 5.51349
 scale = Vector2( 1e-05, 1e-05 )
 z_index = -1
 frames = SubResource( 14 )
-frame = 8
+frame = 5
 playing = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Backgounds"]
 [connection signal="animation_finished" from="CanvasLayer/Flash" to="CanvasLayer/Flash" method="_on_Flash_animation_finished"]
+[connection signal="animation_finished" from="CanvasLayer/DarkFlash" to="CanvasLayer/DarkFlash" method="_on_Flash_animation_finished"]

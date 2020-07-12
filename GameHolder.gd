@@ -91,6 +91,8 @@ func playerDeath():
 	
 func changeMap(mapNum):
 	
+	$CanvasLayer/DarkFlash.flash()
+	
 	if mapNum != 0:
 		$goal.playing=true
 	

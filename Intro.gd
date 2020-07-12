@@ -9,6 +9,7 @@ var cur = 0
 var time = 0
 var scratch = false
 var dramatic = false
+var fanfare = false
 
 func change_scene(scene, delay = 0.0):
 	yield(get_tree().create_timer(delay), "timeout")
@@ -47,6 +48,9 @@ func _process(delta):
 	elif animation == "Startup3" and dramatic == false:
 		dramatic = true
 		get_parent().get_node("dramatic").playing = true
+	elif animation == "Idle4" and fanfare == false:
+		fanfare = true
+		get_parent().get_node("fanfare").playing = true
 		
 
 
