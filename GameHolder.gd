@@ -102,6 +102,7 @@ func changeMap(mapNum):
 		#then its level 1! start the timer!
 		started = true
 		time = totalTime
+		$song.playing = true
 	if mapNum == len(levels)-1:
 		started = false
 	

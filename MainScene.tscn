@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://GameHolder.gd" type="Script" id=1]
 [ext_resource path="res://spaceBG.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://sounds/sfx/Hit_Hurt.wav" type="AudioStream" id=10]
 [ext_resource path="res://sounds/sfx/goal.wav" type="AudioStream" id=11]
 [ext_resource path="res://sounds/sfx/counter.wav" type="AudioStream" id=12]
+[ext_resource path="res://sounds/song.ogg" type="AudioStream" id=13]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 6 )
@@ -149,6 +150,9 @@ stream = ExtResource( 10 )
 
 [node name="counter" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
+
+[node name="song" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
 
 [node name="clockwise" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
