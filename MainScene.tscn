@@ -139,4 +139,6 @@ frames = SubResource( 13 )
 animation = "flash"
 frame = 3
 script = ExtResource( 8 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 [connection signal="animation_finished" from="CanvasLayer/Flash" to="CanvasLayer/Flash" method="_on_Flash_animation_finished"]

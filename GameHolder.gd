@@ -13,7 +13,7 @@ var timeToRotate = 1.5
 var t = 0
 var rotationResetCount = 0
 
-var totalTime = 180
+var totalTime = 253
 
 var time = 0
 var started = false
